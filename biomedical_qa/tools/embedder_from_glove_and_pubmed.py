@@ -6,7 +6,7 @@ import pickle
 from biomedical_qa.models.embedder import ConstantWordEmbedder
 from biomedical_qa.util import load_vocab
 
-tf.app.flags.DEFINE_string('glove_embedding_file', "/home/oitama1/workspace/biomedical-qa/data/", 'path to embeddings')
+tf.app.flags.DEFINE_string('glove_embedding_file', "/home/oitama1/workspace/biomedical-qa/data/glove", 'path to embeddings')
 tf.app.flags.DEFINE_string('pubmed_vocab_file', "/home/oitama1/workspace/biomedical-qa/data/word2vecTools/types.txt", 'path to vocab file')
 tf.app.flags.DEFINE_string('pubmed_embedding_file', "/home/oitama1/workspace/biomedical-qa/data/word2vecTools/vectors.txt", 'path to embeddings')
 tf.app.flags.DEFINE_string('out_dir', "/home/oitama1/workspace/biomedical-qa/data/embeddingTransferModel", 'path to saved model and config')
