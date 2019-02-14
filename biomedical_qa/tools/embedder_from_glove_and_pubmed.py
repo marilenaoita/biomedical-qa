@@ -3,6 +3,9 @@ import os
 import numpy as np
 import pickle
 
+import sys,os
+sys.path.append(os.getcwd())
+
 from biomedical_qa.models.embedder import ConstantWordEmbedder
 from biomedical_qa.util import load_vocab
 
