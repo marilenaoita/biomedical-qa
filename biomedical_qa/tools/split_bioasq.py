@@ -11,7 +11,7 @@ tf.app.flags.DEFINE_string('dev_path_types', "factoid,list", 'Comma-separated li
 tf.app.flags.DEFINE_string('random_assign_types', "yesno", 'Comma-separated list of question types.')
 tf.app.flags.DEFINE_integer('cross_validation_fold', 1, 'If greater then one, creates datasets for k-fold cross validation -> ignores random_assign_train_fractions & dev_id_file.')
 tf.app.flags.DEFINE_float('random_assign_train_fraction', 0.8, 'Fraction of train data.')
-tf.app.flags.DEFINE_string('dev_id_file', "/home/oitama1/workspace/biomedical-qa/data/bioasq/dev-train/devIds.txt", 'Path to a text file with dev question IDs, one ID per line.')
+tf.app.flags.DEFINE_string('dev_id_file', "/home/oitama1/workspace/biomedical-qa/data/bioasq/dev-train/dev.json", 'Path to a text file with dev question IDs, one ID per line.')
 
 FLAGS = tf.app.flags.FLAGS
 
