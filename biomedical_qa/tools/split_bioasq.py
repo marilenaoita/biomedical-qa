@@ -5,8 +5,8 @@ import json
 import tensorflow as tf
 import numpy as np
 
-tf.app.flags.DEFINE_string('bioasq_file', None, 'Path to the BioASQ JSON file.')
-tf.app.flags.DEFINE_string('out_dir', None, 'Path to the output directory.')
+tf.app.flags.DEFINE_string('bioasq_file', "../data/bioasq/training7b.json", 'Path to the BioASQ JSON file.')
+tf.app.flags.DEFINE_string('out_dir', "../bioasq-dev-train", 'Path to the output directory.')
 tf.app.flags.DEFINE_string('dev_path_types', "factoid,list", 'Comma-separated list of question types.')
 tf.app.flags.DEFINE_string('random_assign_types', "yesno", 'Comma-separated list of question types.')
 tf.app.flags.DEFINE_integer('cross_validation_fold', 1, 'If greater then one, creates datasets for k-fold cross validation -> ignores random_assign_train_fractions & dev_id_file.')
