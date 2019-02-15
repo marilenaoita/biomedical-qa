@@ -12,7 +12,7 @@ from biomedical_qa.util import load_vocab
 tf.app.flags.DEFINE_string('glove_embedding_file', os.environ['HOME']+"/workspace/biomedical-qa/data/glove/glove.6B.300d.txt", 'path to embeddings')
 tf.app.flags.DEFINE_string('pubmed_vocab_file', os.environ['HOME']+"/workspace/biomedical-qa/data/word2vecTools/types.txt", 'path to vocab file')
 tf.app.flags.DEFINE_string('pubmed_embedding_file', os.environ['HOME']+"/workspace/biomedical-qa/data/word2vecTools/vectors.txt", 'path to embeddings')
-tf.app.flags.DEFINE_string('out_dir', os.environ['HOME']+"/workspace/biomedical-qa/data/embeddingTransferModel", 'path to saved model and config')
+tf.app.flags.DEFINE_string('out_dir', os.environ['HOME']+"/workspace/biomedical-qa/model_checkpoints/glove_pubmed_embedder", 'path to saved model and config')
 tf.app.flags.DEFINE_string('name', 'GlovePubmedEmbedder', 'Name of the model')
 
 FLAGS = tf.app.flags.FLAGS
