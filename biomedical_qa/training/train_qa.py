@@ -19,7 +19,7 @@ from biomedical_qa.training.trainer import Trainer
 from biomedical_qa.training.yesno_trainer import YesNoGoalDefiner
 
 # data loading specifics
-tf.app.flags.DEFINE_string('data', "data/bioasq2squad/", 'Directory containing dataset files.')
+tf.app.flags.DEFINE_string('data', "data/SQuAD", 'Directory containing dataset files.')
 tf.app.flags.DEFINE_string('yesno_data', None, 'Directory containing Yes/No dataset files.')
 tf.app.flags.DEFINE_boolean('split_contexts', False, 'Whether to split contexts on newline.')
 tf.app.flags.DEFINE_string("trainset_prefix", "train", "Prefix of training files.")
