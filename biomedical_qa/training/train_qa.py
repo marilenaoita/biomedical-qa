@@ -29,20 +29,20 @@ tf.app.flags.DEFINE_string("task", "qa", "qa, multiple_choice, question_generati
 
 # BioASQ data loading
 tf.app.flags.DEFINE_boolean("is_bioasq", False, "Whether the provided dataset is a BioASQ json.")
-tf.app.flags.DEFINE_boolean("use_bioasq_goals", False, "Whether to optimize the BioASQ goals (assumed true if is_bioasq is true).")
+tf.app.flags.DEFINE_boolean("use_bioasq_goals", True, "Whether to optimize the BioASQ goals (assumed true if is_bioasq is true).")
 tf.app.flags.DEFINE_boolean("bioasq_include_synonyms", True, "Whether BioASQ synonyms should be included.")
 tf.app.flags.DEFINE_integer("bioasq_context_token_limit", -1, "Token limit for BioASQ contexts.")
 
 # model
 tf.app.flags.DEFINE_string("model_config", None, "Config of the model.")
 tf.app.flags.DEFINE_integer("size", 150, "hidden size of model")
-tf.app.flags.DEFINE_integer("max_length", 30, "max length of answer or question depending on task.")
-tf.app.flags.DEFINE_string("composition", 'GRU', "'LSTM', 'GRU'")
+tf.app.flags.DEFINE_integer("max_length", 50, "max length of answer or question depending on task.")
+tf.app.flags.DEFINE_string("composition", 'LSTM', "'LSTM', 'GRU'")
 tf.app.flags.DEFINE_string("model_type", "qa_pointer", "[pointer, simple_pointer].")
 
 # qa_simple_pointer settings
 tf.app.flags.DEFINE_bool("with_fusion", False, "Whether Inter & Intra fusion is activated.")
-tf.app.flags.DEFINE_bool("with_question_type_features", False, "Whether Question types are passed to the network.")
+tf.app.flags.DEFINE_bool("with_question_type_features", True, "Whether Question types are passed to the network.")
 tf.app.flags.DEFINE_bool("with_entity_tag_features", True, "Whether entity tags are passed to the network.")
 
 # qa_pointer settings
@@ -54,11 +54,11 @@ tf.app.flags.DEFINE_integer("answer_layer_poolsize", 8, "Maxout poolsize in answ
 tf.app.flags.DEFINE_float("forgetting_loss_factor", 0.0, "Factor for forgetting loss.")
 tf.app.flags.DEFINE_float("original_weights_loss_factor", 0.0, "Factor for forgetting loss.")
 tf.app.flags.DEFINE_string("start_output_unit", "softmax", "softmax or sigmoid.")
-tf.app.flags.DEFINE_float("dropout", 0.0, "Dropout.")
+tf.app.flags.DEFINE_float("dropout", 0.5, "Dropout.")
 tf.app.flags.DEFINE_float("learning_rate", 1e-3, "Learning rate.")
 tf.app.flags.DEFINE_float("min_learning_rate", 1e-4, "Minimal learning rate.")
 tf.app.flags.DEFINE_float("learning_rate_decay", 0.5, "Learning rate decay when loss on validation set does not improve.")
-tf.app.flags.DEFINE_integer("batch_size", 30, "Number of examples in each batch for training.")
+tf.app.flags.DEFINE_integer("batch_size",128, "Number of examples in each batch for training.")
 tf.app.flags.DEFINE_string("devices", "/cpu:0", "Use this device.")
 tf.app.flags.DEFINE_integer("max_iterations", -1, "Maximum number of batches during training. -1 means until convergence")
 tf.app.flags.DEFINE_integer("ckpt_its", 1000, "Number of iterations until running checkpoint. Negative means after every epoch.")
@@ -76,9 +76,9 @@ tf.app.flags.DEFINE_integer("max_epochs", 40, "Maximum number of epochs.")
 tf.app.flags.DEFINE_string("train_variable_prefixes", "", "Comma-seperated list of variable name prefixes that should be trained.")
 
 #embedder
-tf.app.flags.DEFINE_boolean("with_chars", False, "Use char word-embedder additionally.")
+tf.app.flags.DEFINE_boolean("with_chars", True, "Use char word-embedder additionally.")
 tf.app.flags.DEFINE_string("transfer_model_config", None, "Path to transfer model config.")
-tf.app.flags.DEFINE_string("transfer_model_path", None, "Path to transfer model model.")
+tf.app.flags.DEFINE_string("transfer_model_path", "./results", "Path to transfer model model.")
 tf.app.flags.DEFINE_integer("transfer_layer_size", None, "Learning rate for transfer model.")
 
 
