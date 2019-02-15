@@ -19,18 +19,18 @@ from biomedical_qa.training.trainer import Trainer
 from biomedical_qa.training.yesno_trainer import YesNoGoalDefiner
 
 # data loading specifics
-tf.app.flags.DEFINE_string('data', None, 'Directory containing dataset files.')
+tf.app.flags.DEFINE_string('data', "data/bioasq2squad/", 'Directory containing dataset files.')
 tf.app.flags.DEFINE_string('yesno_data', None, 'Directory containing Yes/No dataset files.')
 tf.app.flags.DEFINE_boolean('split_contexts', False, 'Whether to split contexts on newline.')
 tf.app.flags.DEFINE_string("trainset_prefix", "train", "Prefix of training files.")
 tf.app.flags.DEFINE_string("validset_prefix", "valid", "Prefix of validation files.")
-tf.app.flags.DEFINE_string("dataset", "squad", "[wikireading,squad].")
+tf.app.flags.DEFINE_string("dataset", "squad", "[wikireading,squad, bioasq2squad].")
 tf.app.flags.DEFINE_string("task", "qa", "qa, multiple_choice, question_generation")
 
 # BioASQ data loading
 tf.app.flags.DEFINE_boolean("is_bioasq", False, "Whether the provided dataset is a BioASQ json.")
 tf.app.flags.DEFINE_boolean("use_bioasq_goals", False, "Whether to optimize the BioASQ goals (assumed true if is_bioasq is true).")
-tf.app.flags.DEFINE_boolean("bioasq_include_synonyms", False, "Whether BioASQ synonyms should be included.")
+tf.app.flags.DEFINE_boolean("bioasq_include_synonyms", True, "Whether BioASQ synonyms should be included.")
 tf.app.flags.DEFINE_integer("bioasq_context_token_limit", -1, "Token limit for BioASQ contexts.")
 
 # model
@@ -43,7 +43,7 @@ tf.app.flags.DEFINE_string("model_type", "qa_pointer", "[pointer, simple_pointer
 # qa_simple_pointer settings
 tf.app.flags.DEFINE_bool("with_fusion", False, "Whether Inter & Intra fusion is activated.")
 tf.app.flags.DEFINE_bool("with_question_type_features", False, "Whether Question types are passed to the network.")
-tf.app.flags.DEFINE_bool("with_entity_tag_features", False, "Whether entity tags are passed to the network.")
+tf.app.flags.DEFINE_bool("with_entity_tag_features", True, "Whether entity tags are passed to the network.")
 
 # qa_pointer settings
 tf.app.flags.DEFINE_string("answer_layer_type", "dpn", "Type of answer layer ([dpn]).")
