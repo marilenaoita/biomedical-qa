@@ -10,8 +10,8 @@ sys.path.append(os.getcwd())
 from biomedical_qa.data.bioasq_squad_builder import BioAsqSquadBuilder
 
 
-tf.app.flags.DEFINE_string('bioasq_file', "/home/oitama1/workspace/biomedical-qa/data/bioasq/training7b.json", 'Path to the BioASQ JSON file.')
-tf.app.flags.DEFINE_string('out_dir', "/home/oitama1/workspace/biomedical-qa/data/bioasq2squad", 'Path to the output directory.')
+tf.app.flags.DEFINE_string('bioasq_file', "/workspace/biomedical-qa/data/bioasq/training7b.json", 'Path to the BioASQ JSON file.')
+tf.app.flags.DEFINE_string('out_dir', "/workspace/biomedical-qa/data/bioasq2squad", 'Path to the output directory.')
 tf.app.flags.DEFINE_string('types', "factoid,list", 'Comma-separated list of question types.')
 tf.app.flags.DEFINE_float('train_fraction', 0.8, 'Fraction of training data.')
 tf.app.flags.DEFINE_integer('context_token_limit', -1, 'Maximum number of context tokens. Max on BioASQ is ~4300 and on SQuAD ~700.')
