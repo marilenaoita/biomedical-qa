@@ -1,4 +1,5 @@
 import web
+from web import *
 
 def init_with_word_embeddings(sess, autoreader,
                               fname="./quebap/data/SG_GoogleNews/GoogleNews-vectors-negative300.bin",
