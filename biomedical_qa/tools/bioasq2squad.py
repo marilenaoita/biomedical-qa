@@ -4,6 +4,9 @@ import json
 import numpy as np
 import tensorflow as tf
 
+import sys,os
+sys.path.append(os.getcwd())
+
 from biomedical_qa.data.bioasq_squad_builder import BioAsqSquadBuilder
 
 
