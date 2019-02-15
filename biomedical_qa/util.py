@@ -1,4 +1,5 @@
-import web.embeddings
+import web
+from web import embeddings
 
 
 def init_with_word_embeddings(sess, autoreader,
